@@ -86,7 +86,7 @@ froat barx;
 
 void setup(){
 
-  size(screen.width*0.7, screen.height*0.75);    //OPENGLと書くことによって、3D空間であることを明示する
+  size(screen.width, screen.height);    //OPENGLと書くことによって、3D空間であることを明示する
 hint(ENABLE_OPENGL_4X_SMOOTH); //DISABLE_OPENGL_2X_SMOOTHでも可
 
 // LL = loadImage("./data/eyeL.png");
@@ -107,7 +107,7 @@ barx = mouseX-25;
 //バー
 noStroke();    
 fill(0+255*zahyo,50,255-255*zahyo);
-rect(0, screen.height*0.67,screen.width*0.7, screen.height*0.78);
+rect(0, screen.height*0.67,screen.width, screen.height*0.78);
 
 //ボタンを追従させる
     if(barx>25 && barx<width-50 ){
@@ -174,46 +174,46 @@ translate(width/2, height/2);    //立体の中心を画面中央に移動
 
 
 fill(210,180,180);
-ellipse(0, 0, 475, 475); 
+ellipse(0, 0, 275, 275); 
 
 //瞳孔散大筋
 for (int i = 0; i < 36; i++) {
   rotate(PI/18);
 stroke(179,72,29);
-strokeWeight(15-13*zahyo);
-  line(0, 0, 0, 233);
+strokeWeight(7-4*zahyo);
+  line(0, 0, 0, 133);
 }
 
 //瞳孔括約筋
 noStroke();
 fill(239,193,196);
-ellipse(0, 0, 375-60*zahyo, 375-60*zahyo); 
+ellipse(0, 0, 175-10*zahyo, 175-10*zahyo); 
 fill(169,72,29);
-ellipse(0, 0, 360-85*zahyo, 360-85*zahyo); 
+ellipse(0, 0, 160-35*zahyo, 160-35*zahyo); 
 fill(239,193,196);
-ellipse(0, 0, 345-110*zahyo, 345-110*zahyo); 
+ellipse(0, 0, 145-60*zahyo, 145-60*zahyo); 
 fill(169,72,29);
-ellipse(0, 0, 330-135*zahyo, 330-135*zahyo); 
+ellipse(0, 0, 130-85*zahyo, 130-85*zahyo); 
 fill(239,193,196);
-ellipse(0, 0, 315-160*zahyo, 315-160*zahyo); 
+ellipse(0, 0, 115-160*zahyo, 115-160*zahyo); 
 
 //瞳
 fill(89,38,45);
-ellipse(0, 0, 300-200*zahyo, 300-200*zahyo); 
+ellipse(0, 0, 100-50*zahyo, 100-50*zahyo); 
 
 
 
 noFill();
 stroke(0);
 strokeWeight(6);
-ellipse(0, 0, 475, 475); 
+ellipse(0, 0, 275, 275); 
 
 
 }
 
 
 // マウスドラッグ時の処理
-void mouseDragged(){
+void mousePressed(){
   rotX += (mouseX - pmouseX) * 0.01;
   rotY -= (mouseY - pmouseY) * 0.01;
 
@@ -233,7 +233,7 @@ Implement by <a href="http://processingjs.org/" target="_blank">Processing.js</a
 	
 </div>
 
-<div  style="position:absolute;left:1%;top:2%;color: #ff9c00; font-size:24pt">
+<div  style="position:absolute;left:1%;top:2%;color: #ff9c00; font-size:5pt">
 画面上をマウスや手で左右にスワイプして眼の明暗調節を見てみましょう
 </div>  
 </body>
