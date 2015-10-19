@@ -174,39 +174,39 @@ translate(width/2, height/2);    //立体の中心を画面中央に移動
 
 
 fill(210,180,180);
-ellipse(0, 0, 275, 275); 
+ellipse(0, 0, 205, 205); 
 
 //瞳孔散大筋
 for (int i = 0; i < 36; i++) {
   rotate(PI/18);
 stroke(179,72,29);
 strokeWeight(7-4*zahyo);
-  line(0, 0, 0, 133);
+  line(0, 0, 0, 98);
 }
 
 //瞳孔括約筋
 noStroke();
 fill(239,193,196);
-ellipse(0, 0, 175-10*zahyo, 175-10*zahyo); 
+ellipse(0, 0, 155-30*zahyo, 155-30*zahyo); 
 fill(169,72,29);
-ellipse(0, 0, 160-35*zahyo, 160-35*zahyo); 
+ellipse(0, 0, 140-40*zahyo, 140-40*zahyo); 
 fill(239,193,196);
-ellipse(0, 0, 145-60*zahyo, 145-60*zahyo); 
+ellipse(0, 0, 135-60*zahyo, 135-60*zahyo); 
 fill(169,72,29);
-ellipse(0, 0, 130-85*zahyo, 130-85*zahyo); 
+ellipse(0, 0, 120-85*zahyo, 120-85*zahyo); 
 fill(239,193,196);
-ellipse(0, 0, 115-160*zahyo, 115-160*zahyo); 
+ellipse(0, 0, 115-110*zahyo, 115-110*zahyo); 
 
 //瞳
 fill(89,38,45);
-ellipse(0, 0, 100-50*zahyo, 100-50*zahyo); 
+ellipse(0, 0, 90-40*zahyo, 90-40*zahyo); 
 
 
 
 noFill();
 stroke(0);
 strokeWeight(6);
-ellipse(0, 0, 275, 275); 
+ellipse(0, 0, 205, 205); 
 
 
 }
@@ -241,7 +241,7 @@ Implement by <a href="http://processingjs.org/" target="_blank">Processing.js</a
 	
 </div>
 
-<div  style="position:absolute;left:1%;top:2%;color: #ff9c00; font-size:5pt">
+<div  style="position:absolute;left:1%;top:2%;color: #ff9c00; font-size:10pt">
 画面上をマウスや手で左右にスワイプして眼の明暗調節を見てみましょう
 </div>  
 </body>
