@@ -1,0 +1,14 @@
+＊初めに
+ダウンロードした後、使用される場合は展開してください。
+展開後、フォルダを開き、「（教材名）_スタート」をクリックしてお使いください。
+
+
+＊ファイルをコピーする場合
+コピーや、別の場所に移動させる場合は、展開したフォルダごと移動してください。
+「（教材名）_スタート」のみでは動作しません。
+
+*ファイルを実行するにはInternet Explorer11以降、Google Chrome8、Mozilla Firefox4、Safari8を使用してください。
+
+2015.06.17
+
+This software is released under the MIT License, see LICENSE.txt.
