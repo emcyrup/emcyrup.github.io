@@ -12,7 +12,7 @@ resizeTo(screen.width,screen.height);
 <!--
 function openwin(url){
 
-	window.open(url,"","width=1000,height=730,scrollbars=yes, resizable = no ,directories = 0");
+	window.open(url,"","screen.availWidth,screen.availHeight,scrollbars=no, resizable = no ,directories = 0");
 
 }
 // -->
@@ -101,7 +101,7 @@ smooth();
 
 
 int i;
-float zahyo = mouseX/screen.height*0.67;
+float zahyo = mouseX/screen.width;
 barx = mouseX-25;
 
 //バー
@@ -210,10 +210,18 @@ ellipse(0, 0, 275, 275);
 
 
 }
-
+void mousePressed() {
+            targetPressed = false;
+ 
+            if (x-r <= mouseX && mouseX <= x+r) {
+                if (y-r <= mouseY && mouseY <= y+r) {
+                    targetPressed = true;
+                }
+            }
+        }
 
 // マウスドラッグ時の処理
-void mousePressed(){
+void mouseReleased(){
   rotX += (mouseX - pmouseX) * 0.01;
   rotY -= (mouseY - pmouseY) * 0.01;
 
