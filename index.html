@@ -27,9 +27,9 @@ a:active { color: #ff8000; }
 html,body {
 max-width: 900px;
 　　margin: auto;
-overflow: hidden
+
     
-/*    -ms-touch-action: none; /* IE10で、スクロールをとめて、タッチ可能にする。*/*/
+
  
 display:table;
 }
@@ -86,7 +86,7 @@ import processing.opengl.*;
 float rotX, rotY;
 
 void setup(){
-  size(300, 350, OPENGL);    //OPENGLと書くことによって、3D空間であることを明示する
+  size(300, 300, OPENGL);    //OPENGLと書くことによって、3D空間であることを明示する
 }
  
 void draw(){
@@ -106,7 +106,7 @@ rotateX(rotY);
 rotateX(rotY);
 rotateY(rotX);
 
-scale(0.45);
+scale(0.4);
 normal(rotX, rotY, 2);
 
 
