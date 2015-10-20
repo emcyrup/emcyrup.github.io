@@ -32,17 +32,17 @@ display:table;
 }
 body{
 
-
+text-align : center;
 margin: 0 ;
     display:table-cell;
-    text-align : center;
+    
 }
 /* --- ボックス --- */
 div.section {
 padding:5px; /* ボックスの下パディング */
 margin: 0 ;
 background: #ffffff no-repeat bottom; /* ボックスの背景 */
-font-size: 45pt;
+font-size: 50pt;
 color: #000000;
 }
 div.close {
@@ -59,7 +59,7 @@ font-size: 100%;
             border: 4px solid #84c1ff;
             cursor:move;
 font-size: 4pt;
-    text-align : center;
+    
 margin: 0 ;
         }
 div.link {
@@ -67,8 +67,8 @@ div.link {
 padding:20px; /* ボックスの下パディング */
 margin: 0;
 background: #e6e6fa no-repeat bottom; /* ボックスの背景 */
-font-size: 90%;
-
+font-size: 100%;
+ text-align : center;
 }
 </style>
 <!--[if lt IE 9]><script src="data/js/excanvas.js"></script><![endif]-->
@@ -94,7 +94,7 @@ import processing.opengl.*;
 float rotX, rotY;
 
 void setup(){
-  size(480, 480, OPENGL);    //OPENGLと書くことによって、3D空間であることを明示する
+  size(640, 480, OPENGL);    //OPENGLと書くことによって、3D空間であることを明示する
 }
  
 void draw(){
@@ -114,7 +114,7 @@ rotateX(rotY);
 rotateX(rotY);
 rotateY(rotX);
 
-scale(0.6);
+scale(0.7);
 normal(rotX, rotY, 2);
 
 
