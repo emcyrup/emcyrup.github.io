@@ -25,8 +25,10 @@ a:hover { color: #ff0000; text-decoration: underline; }
 a:active { color: #ff8000; }
 
 html,body {
+max-width: 900px;
+　　margin: auto;
 overflow: hidden
-    height: 100%
+    
 /*    -ms-touch-action: none; /* IE10で、スクロールをとめて、タッチ可能にする。*/*/
  
 display:table;
@@ -34,20 +36,21 @@ display:table;
 body{
 position: fixed;
 width: 100%
+margin: 0 ;
     display:table-cell;
     text-align : center;
 }
 /* --- ボックス --- */
 div.section {
 padding:5px; /* ボックスの下パディング */
-margin: 0 auto;
+margin: 0 ;
 background: #ffffff no-repeat bottom; /* ボックスの背景 */
 font-size: 15pt;
 color: #000000;
 }
 div.close {
-padding:10px; /* ボックスの下パディング */
-margin: 0 auto; 
+padding:7px; /* ボックスの下パディング */
+
 background: #e6e6fa no-repeat bottom; /* ボックスの背景 */
 font-size: 100%;
 }
@@ -83,7 +86,7 @@ import processing.opengl.*;
 float rotX, rotY;
 
 void setup(){
-  size(300, 420, OPENGL);    //OPENGLと書くことによって、3D空間であることを明示する
+  size(300, 350, OPENGL);    //OPENGLと書くことによって、3D空間であることを明示する
 }
  
 void draw(){
