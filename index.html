@@ -24,13 +24,16 @@ a:visited { color: #000080; }
 a:hover { color: #ff0000; text-decoration: underline; }
 a:active { color: #ff8000; }
 
-html{
+html,body {
+overflow: hidden
+    height: 100%
 /*    -ms-touch-action: none; /* IE10で、スクロールをとめて、タッチ可能にする。*/*/
  
 display:table;
 }
 body{
-width: screen.width;
+position: fixed;
+width: 100%
     display:table-cell;
     text-align : center;
 }
@@ -51,7 +54,7 @@ font-size: 100%;
 
 
 #canvas{
-            border: 6px solid #84c1ff;
+            border: 5px solid #84c1ff;
             cursor:move;
     text-align : center;
         }
@@ -80,7 +83,7 @@ import processing.opengl.*;
 float rotX, rotY;
 
 void setup(){
-  size(300, 460, OPENGL);    //OPENGLと書くことによって、3D空間であることを明示する
+  size(300, 420, OPENGL);    //OPENGLと書くことによって、3D空間であることを明示する
 }
  
 void draw(){
