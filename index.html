@@ -42,7 +42,7 @@ div.section {
 padding:5px; /* ボックスの下パディング */
 margin: 0 ;
 background: #ffffff no-repeat bottom; /* ボックスの背景 */
-font-size: 25pt;
+font-size: 45pt;
 color: #000000;
 }
 div.close {
@@ -94,7 +94,7 @@ import processing.opengl.*;
 float rotX, rotY;
 
 void setup(){
-  size(310, 300, OPENGL);    //OPENGLと書くことによって、3D空間であることを明示する
+  size(480, 480, OPENGL);    //OPENGLと書くことによって、3D空間であることを明示する
 }
  
 void draw(){
@@ -114,7 +114,7 @@ rotateX(rotY);
 rotateX(rotY);
 rotateY(rotX);
 
-scale(0.4);
+scale(0.6);
 normal(rotX, rotY, 2);
 
 
