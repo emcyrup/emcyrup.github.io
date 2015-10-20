@@ -25,6 +25,8 @@ a:hover { color: #ff0000; text-decoration: underline; }
 a:active { color: #ff8000; }
 
 html{
+/*    -ms-touch-action: none; /* IE10で、スクロールをとめて、タッチ可能にする。*/*/
+ 
 display:table;
 }
 body{
@@ -53,10 +55,7 @@ font-size: 100%;
             cursor:move;
     text-align : center;
         }
-       
- html { 
-    -ms-touch-action: none; /* IE10で、スクロールをとめて、タッチ可能にする。*/
-  }
+
 </style>
 <!--[if lt IE 9]><script src="data/js/excanvas.js"></script><![endif]-->
 <script type="text/javascript" src="data/js/processing.js"></script>
@@ -81,7 +80,7 @@ import processing.opengl.*;
 float rotX, rotY;
 
 void setup(){
-  size(320, 480, OPENGL);    //OPENGLと書くことによって、3D空間であることを明示する
+  size(300, 460, OPENGL);    //OPENGLと書くことによって、3D空間であることを明示する
 }
  
 void draw(){
