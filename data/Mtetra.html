@@ -1,39 +1,112 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+ï»¿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
 <html> <head>
-<meta charset="Shift_JIS" name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=no" /><!--"euc-jp,Shift_JIS"-->
+<meta charset="utf-8" name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=2.0, user-scalable=yes" /><!--"euc-jp,Shift_JIS"-->
 
 <link rel="stylesheet" type="text/css">
-<title>‘¢Šâz•¨‚Ì‹¤—LŒ‹‡</title>
+<title>silicate</title>
+
+<script type="text/javascript">
+
+<!--
+function openwin(url){
+
+	window.open(url,"","screen.availWidth,screen.availHeight,scrollbars=no, resizable = no ,directories = 0");
+
+}
+// -->
+</script>
+
 <style>
 a:link { color: #0000ff; }
 a:visited { color: #000080; }
 a:hover { color: #ff0000; text-decoration: underline; }
 a:active { color: #ff8000; }
 
-/* --- ƒ{ƒbƒNƒX --- */
+html,body {
+
+ã€€ã€€margin: auto;
+display:table;
+    -ms-touch-action: none; /* IE10ã§ã€ã‚¹ã‚¯ãƒ­ãƒ¼ãƒ«ã‚’ã¨ã‚ã¦ã€ã‚¿ãƒƒãƒå¯èƒ½ã«ã™ã‚‹ã€‚*/
+overflow: auto;
+
+
+}
+body{
+
+text-align : center;
+margin: 0 ;
+    display:table-cell;
+    
+}
+/* --- ãƒœãƒƒã‚¯ã‚¹ --- */
 div.section {
-padding:5px; /* ƒ{ƒbƒNƒX‚Ì‰ºƒpƒfƒBƒ“ƒO */
-margin: 5px;
-background: #ffffff no-repeat bottom; /* ƒ{ƒbƒNƒX‚Ì”wŒi */
-font-size: 32pt;
+padding:5px; /* ãƒœãƒƒã‚¯ã‚¹ã®ä¸‹ãƒ‘ãƒ‡ã‚£ãƒ³ã‚° */
+margin: 0 ;
+background: #ffffff no-repeat bottom; /* ãƒœãƒƒã‚¯ã‚¹ã®èƒŒæ™¯ */
+font-size: 50pt;
 color: #000000;
 }
 div.close {
-padding:10px; /* ƒ{ƒbƒNƒX‚Ì‰ºƒpƒfƒBƒ“ƒO */
-margin: 10px;
-background: #e6e6fa no-repeat bottom; /* ƒ{ƒbƒNƒX‚Ì”wŒi */
-font-size: 200%;
+padding:6px; /* ãƒœãƒƒã‚¯ã‚¹ã®ä¸‹ãƒ‘ãƒ‡ã‚£ãƒ³ã‚° */
+
+background: #e6e6fa no-repeat bottom; /* ãƒœãƒƒã‚¯ã‚¹ã®èƒŒæ™¯ */
+font-size: 130%;
 }
 
 
 #canvas{
-            border: 6px solid #84c1ff;
+
+    
+            border: 10px solid #84c1ff;
             cursor:move;
+font-size: 10pt;
+    
+margin: 0 ;
         }
-       
- html { 
-    -ms-touch-action: none; /* IE10‚ÅAƒXƒNƒ[ƒ‹‚ğ‚Æ‚ß‚ÄAƒ^ƒbƒ`‰Â”\‚É‚·‚éB*/
-  }
+
+div.link {
+
+padding:2px; /* ãƒœãƒƒã‚¯ã‚¹ã®ä¸‹ãƒ‘ãƒ‡ã‚£ãƒ³ã‚° */
+margin: 0;
+background: #e6e6fa no-repeat bottom; /* ãƒœãƒƒã‚¯ã‚¹ã®èƒŒæ™¯ */
+font-size: 140%;
+ text-align : center;
+height: 160px;
+    width: 100%-12px;
+    overflow: scroll;
+   
+    -webkit-overflow-scrolling: touch;
+
+
+
+}
+.link::-webkit-scrollbar{ /* ã‚¹ã‚¯ãƒ­ãƒ¼ãƒ«ãƒãƒ¼æœ¬ä½“ */
+	width: 12px;
+	
+}
+
+.link::-webkit-scrollbar-thumb{ /* ã‚¹ã‚¯ãƒ­ãƒ¼ãƒ«ãƒãƒ¼ã®å‹•ãéƒ¨åˆ† */
+	background: #165e83;
+	border-radius: 12px;
+}
+
+.link::-webkit-scrollbar-track-piece:start{ /* ã‚¹ã‚¯ãƒ­ãƒ¼ãƒ«ãƒãƒ¼ã®å‹•ãéƒ¨åˆ†ã®å‰ */
+	background: #f0f8ff;
+ border-radius: 12px;
+}
+.link::-webkit-scrollbar-track-piece:end{ /* ã‚¹ã‚¯ãƒ­ãƒ¼ãƒ«ãƒãƒ¼ã®å‹•ãéƒ¨åˆ†ã®å¾Œã‚ */
+	background: #f0f8ff;
+ border-radius: 12px;
+}
+.link::-webkit-scrollbar-corner{ /* ã‚¹ã‚¯ãƒ­ãƒ¼ãƒ«ãƒãƒ¼è§’ */
+	background: transparent;
+}
+.link::-webkit-scrollbar-thumb:hover {
+  -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.5);
+  background: #6495ed;
+
+
+
 </style>
 <!--[if lt IE 9]><script src="js/excanvas.js"></script><![endif]-->
 <script type="text/javascript" src="js/processing.js"></script>
@@ -41,11 +114,11 @@ font-size: 200%;
 
 <script>
          window.onload = function(){
-           // canvas—v‘f
+           // canvasè¦ç´ 
            var canvas = document.getElementsByTagName('canvas')[0];
-           // Proccessing‚ÌƒR[ƒh‚ª‘‚©‚ê‚½script—v‘f
+           // Proccessingã®ã‚³ãƒ¼ãƒ‰ãŒæ›¸ã‹ã‚ŒãŸscriptè¦ç´ 
            var codeElm = document.getElementById('processing-code');
-           // ã‹L—v‘f‚Ì“à—e‚ğæ“¾
+           // ä¸Šè¨˜è¦ç´ ã®å†…å®¹ã‚’å–å¾—
            var code = codeElm.textContent || codeElm.innerText;
 
 
@@ -58,7 +131,7 @@ import processing.opengl.*;
 float rotX, rotY;
 
 void setup(){
-  size(screen.width*0.7, screen.height*0.6, OPENGL);    //OPENGL‚Æ‘‚­‚±‚Æ‚É‚æ‚Á‚ÄA3D‹óŠÔ‚Å‚ ‚é‚±‚Æ‚ğ–¾¦‚·‚é
+  size(840, 480, OPENGL);    //OPENGLã¨æ›¸ãã“ã¨ã«ã‚ˆã£ã¦ã€3Dç©ºé–“ã§ã‚ã‚‹ã“ã¨ã‚’æ˜ç¤ºã™ã‚‹
 }
  
 void draw(){
@@ -66,12 +139,18 @@ void draw(){
 smooth(); 
 lights();
 
-// ƒCƒ[ƒW“à‚ğƒNƒŠƒbƒN‚µ‚Ä 
+// ã‚¤ãƒ¡ãƒ¼ã‚¸å†…ã‚’ã‚¯ãƒªãƒƒã‚¯ã—ã¦ 
 
 
 
 
-     translate(width/2, height/2);    //—§‘Ì‚Ì’†S‚ğ‰æ–Ê’†‰›‚ÉˆÚ“®   
+     translate(width/2, height/2);    //ç«‹ä½“ã®ä¸­å¿ƒã‚’ç”»é¢ä¸­å¤®ã«ç§»å‹•   
+
+
+rotateX(150);
+	rotateY(rotX);
+ rotateY(frameCount*0.005);
+
 
 rotateX(rotY);
 rotateY(rotX);
@@ -79,14 +158,14 @@ rotateY(rotX);
 
  
 scale(1.3);
-pushMatrix();    //Œ»İ‚ÌÀ•W‚ğ•Û‘¶
-translate(-120,0,-50); 
+pushMatrix();    //ç¾åœ¨ã®åº§æ¨™ã‚’ä¿å­˜
+translate(-140,0,-50); 
   noFill();
 stroke(255);
 
-beginShape(TRIANGLES); //l–Ê‘Ì
+beginShape(TRIANGLES); //å››é¢ä½“
 
-  //³–Ê
+  //æ­£é¢
   vertex(-50,  0,  -50);
   vertex( 50,  0,  -50);
   vertex( 0, 0,  30);
@@ -102,15 +181,15 @@ beginShape(TRIANGLES); //l–Ê‘Ì
   vertex(50,  0,  -50);
   vertex(0,  0,  30);
   vertex( 0, -60,  -20);
-endShape();    //lŠpŒ`‚ğ•Â‚¶‚é
-popMatrix();    //Œ³‚ÌÀ•W‚É–ß‚·
+endShape();    //å››è§’å½¢ã‚’é–‰ã˜ã‚‹
+popMatrix();    //å…ƒã®åº§æ¨™ã«æˆ»ã™
 
 
 
-pushMatrix();    //Œ»İ‚ÌÀ•W‚ğ•Û‘¶
+pushMatrix();    //ç¾åœ¨ã®åº§æ¨™ã‚’ä¿å­˜
 translate(0,0,-50); 
-beginShape(TRIANGLES); //l–Ê‘Ì
-  //³–Ê
+beginShape(TRIANGLES); //å››é¢ä½“
+  //æ­£é¢
   vertex(-50,  0,  -50);
   vertex( 50,  0,  -50);
   vertex( 0, 0,  30);
@@ -126,13 +205,13 @@ beginShape(TRIANGLES); //l–Ê‘Ì
   vertex(50,  0,  -50);
   vertex(0,  0,  30);
   vertex( 0, -60,  -20);
-endShape();    //lŠpŒ`‚ğ•Â‚¶‚é
-popMatrix();    //Œ³‚ÌÀ•W‚É–ß‚·
+endShape();    //å››è§’å½¢ã‚’é–‰ã˜ã‚‹
+popMatrix();    //å…ƒã®åº§æ¨™ã«æˆ»ã™
 
-pushMatrix();    //Œ»İ‚ÌÀ•W‚ğ•Û‘¶
-translate(120,0,-50); 
-beginShape(TRIANGLES); //l–Ê‘Ì
-  //³–Ê
+pushMatrix();    //ç¾åœ¨ã®åº§æ¨™ã‚’ä¿å­˜
+translate(140,0,-50); 
+beginShape(TRIANGLES); //å››é¢ä½“
+  //æ­£é¢
 
   vertex(-50,  0,  -50);
   vertex( 50,  0,  -50);
@@ -149,13 +228,13 @@ beginShape(TRIANGLES); //l–Ê‘Ì
   vertex(50,  0,  -50);
   vertex(0,  0,  30);
   vertex( 0, -60,  -20); 
-endShape();    //lŠpŒ`‚ğ•Â‚¶‚é
-popMatrix();    //Œ³‚ÌÀ•W‚É–ß‚·
+endShape();    //å››è§’å½¢ã‚’é–‰ã˜ã‚‹
+popMatrix();    //å…ƒã®åº§æ¨™ã«æˆ»ã™
 
-pushMatrix();    //Œ»İ‚ÌÀ•W‚ğ•Û‘¶
+pushMatrix();    //ç¾åœ¨ã®åº§æ¨™ã‚’ä¿å­˜
 translate(-75,0,50); 
-beginShape(TRIANGLES); //l–Ê‘Ì
-  //³–Ê
+beginShape(TRIANGLES); //å››é¢ä½“
+  //æ­£é¢
   vertex(-50,  0,  30);
   vertex( 50,  0,  30);
   vertex( 0, 0,  -50);
@@ -171,14 +250,14 @@ beginShape(TRIANGLES); //l–Ê‘Ì
   vertex(50,  0,  30);
   vertex(0,  0,  -50);
   vertex( 0, -60,  0);
-endShape();    //lŠpŒ`‚ğ•Â‚¶‚é
-popMatrix();    //Œ³‚ÌÀ•W‚É–ß‚·
+endShape();    //å››è§’å½¢ã‚’é–‰ã˜ã‚‹
+popMatrix();    //å…ƒã®åº§æ¨™ã«æˆ»ã™
 
 
-pushMatrix();    //Œ»İ‚ÌÀ•W‚ğ•Û‘¶
+pushMatrix();    //ç¾åœ¨ã®åº§æ¨™ã‚’ä¿å­˜
 translate(75,0,50); 
-beginShape(TRIANGLES); //l–Ê‘Ì
-  //³–Ê
+beginShape(TRIANGLES); //å››é¢ä½“
+  //æ­£é¢
   vertex(-50,  0,  30);
   vertex( 50,  0,  30);
   vertex( 0, 0,  -50);
@@ -194,12 +273,12 @@ beginShape(TRIANGLES); //l–Ê‘Ì
   vertex(50,  0,  30);
   vertex(0,  0,  -50);
   vertex( 0, -60,  0);
-endShape();    //lŠpŒ`‚ğ•Â‚¶‚é
-popMatrix();    //Œ³‚ÌÀ•W‚É–ß‚·
+endShape();    //å››è§’å½¢ã‚’é–‰ã˜ã‚‹
+popMatrix();    //å…ƒã®åº§æ¨™ã«æˆ»ã™
 
 
-//Œ‹‚Ôü ã1
-pushMatrix();    //Œ»İ‚ÌÀ•W‚ğ•Û‘¶ 
+//çµã¶ç·š ä¸Š1
+pushMatrix();    //ç¾åœ¨ã®åº§æ¨™ã‚’ä¿å­˜ 
 noStroke();
 fill(255);
 //rotateX(radians(45));
@@ -207,9 +286,9 @@ fill(255);
 //rotateZ(radians(45));
 translate(0, -40, -70);
 box(2,50,2);
-popMatrix();    //Œ³‚ÌÀ•W‚É–ß‚·
-//‰E
-pushMatrix();    //Œ»İ‚ÌÀ•W‚ğ•Û‘¶ 
+popMatrix();    //å…ƒã®åº§æ¨™ã«æˆ»ã™
+//å³
+pushMatrix();    //ç¾åœ¨ã®åº§æ¨™ã‚’ä¿å­˜ 
 noStroke();
 fill(255);
 //rotateX(PI/6);
@@ -217,9 +296,9 @@ rotateY(PI/6);
 rotateZ(PI/9);
 translate(50,-30,-60);
 box(60,2,2);
-popMatrix();    //Œ³‚ÌÀ•W‚É–ß‚·
-//¶
-pushMatrix();    //Œ»İ‚ÌÀ•W‚ğ•Û‘¶ 
+popMatrix();    //å…ƒã®åº§æ¨™ã«æˆ»ã™
+//å·¦
+pushMatrix();    //ç¾åœ¨ã®åº§æ¨™ã‚’ä¿å­˜ 
 noStroke();
 fill(255);
 //rotateX();
@@ -227,9 +306,9 @@ rotateY(-PI/6);
 rotateZ(-PI/9);
 translate(-50, -30, -60);
 box(60,2,2);
-popMatrix();    //Œ³‚ÌÀ•W‚É–ß‚·
-//è‘O
-pushMatrix();    //Œ»İ‚ÌÀ•W‚ğ•Û‘¶ 
+popMatrix();    //å…ƒã®åº§æ¨™ã«æˆ»ã™
+//æ‰‹å‰
+pushMatrix();    //ç¾åœ¨ã®åº§æ¨™ã‚’ä¿å­˜ 
 noStroke();
 fill(255);
 rotateX(-PI/10);
@@ -237,93 +316,93 @@ rotateX(-PI/10);
 //rotateZ(PI/9);
 translate(0, 5, -40);
 box(2,2,60);
-popMatrix();    //Œ³‚ÌÀ•W‚É–ß‚·
+popMatrix();    //å…ƒã®åº§æ¨™ã«æˆ»ã™
 
-//Œ‹‚Ôü ã2
-pushMatrix();    //Œ»İ‚ÌÀ•W‚ğ•Û‘¶ 
+//çµã¶ç·š ä¸Š2
+pushMatrix();    //ç¾åœ¨ã®åº§æ¨™ã‚’ä¿å­˜ 
 noStroke();
 fill(255);
 //rotateX(radians(45));
 //rotateY(radians(325));
 //rotateZ(radians(45));
-translate(120, -40, -70);
+translate(140, -40, -70);
 box(2,50,2);
-popMatrix();    //Œ³‚ÌÀ•W‚É–ß‚·
-//‰E
-pushMatrix();    //Œ»İ‚ÌÀ•W‚ğ•Û‘¶ 
+popMatrix();    //å…ƒã®åº§æ¨™ã«æˆ»ã™
+//å³
+pushMatrix();    //ç¾åœ¨ã®åº§æ¨™ã‚’ä¿å­˜ 
 noStroke();
 fill(255);
-translate(150,-5,-90);
+translate(170,-5,-90);
 //rotateX(PI/6);
 rotateY(PI/6);
 rotateZ(PI/10);
 box(60,2,2);
-popMatrix();    //Œ³‚ÌÀ•W‚É–ß‚·
-//¶
-pushMatrix();    //Œ»İ‚ÌÀ•W‚ğ•Û‘¶ 
+popMatrix();    //å…ƒã®åº§æ¨™ã«æˆ»ã™
+//å·¦
+pushMatrix();    //ç¾åœ¨ã®åº§æ¨™ã‚’ä¿å­˜ 
 noStroke();
 fill(255);
-translate(90, -5, -90);
+translate(110, -5, -90);
 //rotateX();
 rotateY(-PI/6);
 rotateZ(-PI/10);
 box(60,2,2);
-popMatrix();    //Œ³‚ÌÀ•W‚É–ß‚·
-//è‘O
-pushMatrix();    //Œ»İ‚ÌÀ•W‚ğ•Û‘¶ 
+popMatrix();    //å…ƒã®åº§æ¨™ã«æˆ»ã™
+//æ‰‹å‰
+pushMatrix();    //ç¾åœ¨ã®åº§æ¨™ã‚’ä¿å­˜ 
 noStroke();
 fill(255);
-translate(120, -5, -40);
+translate(140, -5, -40);
 rotateX(-PI/10);
 //rotateY(PI/6);
 //rotateZ(PI/9);
 box(2,2,60);
-popMatrix();    //Œ³‚ÌÀ•W‚É–ß‚·
+popMatrix();    //å…ƒã®åº§æ¨™ã«æˆ»ã™
 
-//Œ‹‚Ôü ã3
-pushMatrix();    //Œ»İ‚ÌÀ•W‚ğ•Û‘¶ 
+//çµã¶ç·š ä¸Š3
+pushMatrix();    //ç¾åœ¨ã®åº§æ¨™ã‚’ä¿å­˜ 
 noStroke();
 fill(255);
 //rotateX(radians(45));
 //rotateY(radians(325));
 //rotateZ(radians(45));
-translate(-120, -40, -70);
+translate(-140, -40, -70);
 box(2,50,2);
-popMatrix();    //Œ³‚ÌÀ•W‚É–ß‚·
-//‰E
-pushMatrix();    //Œ»İ‚ÌÀ•W‚ğ•Û‘¶ 
+popMatrix();    //å…ƒã®åº§æ¨™ã«æˆ»ã™
+//å³
+pushMatrix();    //ç¾åœ¨ã®åº§æ¨™ã‚’ä¿å­˜ 
 noStroke();
 fill(255);
-translate(-150,-5,-90);
+translate(-170,-5,-90);
 //rotateX(PI/6);
 rotateY(-PI/6);
 rotateZ(-PI/10);
 box(60,2,2);
-popMatrix();    //Œ³‚ÌÀ•W‚É–ß‚·
-//¶
-pushMatrix();    //Œ»İ‚ÌÀ•W‚ğ•Û‘¶ 
+popMatrix();    //å…ƒã®åº§æ¨™ã«æˆ»ã™
+//å·¦
+pushMatrix();    //ç¾åœ¨ã®åº§æ¨™ã‚’ä¿å­˜ 
 noStroke();
 fill(255);
-translate(-90, -5, -90);
+translate(-110, -5, -90);
 //rotateX();
 rotateY(PI/6);
 rotateZ(PI/10);
 box(60,2,2);
-popMatrix();    //Œ³‚ÌÀ•W‚É–ß‚·
-//è‘O
-pushMatrix();    //Œ»İ‚ÌÀ•W‚ğ•Û‘¶ 
+popMatrix();    //å…ƒã®åº§æ¨™ã«æˆ»ã™
+//æ‰‹å‰
+pushMatrix();    //ç¾åœ¨ã®åº§æ¨™ã‚’ä¿å­˜ 
 noStroke();
 fill(255);
-translate(-120, -5, -40);
+translate(-140, -5, -40);
 rotateX(-PI/10);
 //rotateY(PI/6);
 //rotateZ(PI/9);
 box(2,2,60);
-popMatrix();    //Œ³‚ÌÀ•W‚É–ß‚·
+popMatrix();    //å…ƒã®åº§æ¨™ã«æˆ»ã™
 
 
-//Œ‹‚Ôü ã4
-pushMatrix();    //Œ»İ‚ÌÀ•W‚ğ•Û‘¶ 
+//çµã¶ç·š ä¸Š4
+pushMatrix();    //ç¾åœ¨ã®åº§æ¨™ã‚’ä¿å­˜ 
 noStroke();
 fill(255);
 //rotateX(radians(45));
@@ -331,9 +410,9 @@ fill(255);
 //rotateZ(radians(45));
 translate(75, -40, 50);
 box(2,50,2);
-popMatrix();    //Œ³‚ÌÀ•W‚É–ß‚·
-//‰E
-pushMatrix();    //Œ»İ‚ÌÀ•W‚ğ•Û‘¶ 
+popMatrix();    //å…ƒã®åº§æ¨™ã«æˆ»ã™
+//å³
+pushMatrix();    //ç¾åœ¨ã®åº§æ¨™ã‚’ä¿å­˜ 
 noStroke();
 fill(255);
 translate(105,-5,65);
@@ -341,9 +420,9 @@ translate(105,-5,65);
 rotateY(-PI/6);
 rotateZ(PI/10);
 box(60,2,2);
-popMatrix();    //Œ³‚ÌÀ•W‚É–ß‚·
-//¶
-pushMatrix();    //Œ»İ‚ÌÀ•W‚ğ•Û‘¶ 
+popMatrix();    //å…ƒã®åº§æ¨™ã«æˆ»ã™
+//å·¦
+pushMatrix();    //ç¾åœ¨ã®åº§æ¨™ã‚’ä¿å­˜ 
 noStroke();
 fill(255);
 translate(50, -5, 65);
@@ -351,9 +430,9 @@ translate(50, -5, 65);
 rotateY(PI/6);
 rotateZ(-PI/10);
 box(60,2,2);
-popMatrix();    //Œ³‚ÌÀ•W‚É–ß‚·
-//è‘O
-pushMatrix();    //Œ»İ‚ÌÀ•W‚ğ•Û‘¶ 
+popMatrix();    //å…ƒã®åº§æ¨™ã«æˆ»ã™
+//æ‰‹å‰
+pushMatrix();    //ç¾åœ¨ã®åº§æ¨™ã‚’ä¿å­˜ 
 noStroke();
 fill(255);
 translate(75, -10, 30);
@@ -361,10 +440,10 @@ rotateX(PI/10);
 //rotateY(PI/6);
 //rotateZ(PI/9);
 box(2,2,60);
-popMatrix();    //Œ³‚ÌÀ•W‚É–ß‚·
+popMatrix();    //å…ƒã®åº§æ¨™ã«æˆ»ã™
 
-//Œ‹‚Ôü ã5
-pushMatrix();    //Œ»İ‚ÌÀ•W‚ğ•Û‘¶ 
+//çµã¶ç·š ä¸Š5
+pushMatrix();    //ç¾åœ¨ã®åº§æ¨™ã‚’ä¿å­˜ 
 noStroke();
 fill(255);
 //rotateX(radians(45));
@@ -372,9 +451,9 @@ fill(255);
 //rotateZ(radians(45));
 translate(-75, -40, 50);
 box(2,50,2);
-popMatrix();    //Œ³‚ÌÀ•W‚É–ß‚·
-//‰E
-pushMatrix();    //Œ»İ‚ÌÀ•W‚ğ•Û‘¶ 
+popMatrix();    //å…ƒã®åº§æ¨™ã«æˆ»ã™
+//å³
+pushMatrix();    //ç¾åœ¨ã®åº§æ¨™ã‚’ä¿å­˜ 
 noStroke();
 fill(255);
 translate(-50,-5,65);
@@ -382,9 +461,9 @@ translate(-50,-5,65);
 rotateY(-PI/6);
 rotateZ(PI/10);
 box(60,2,2);
-popMatrix();    //Œ³‚ÌÀ•W‚É–ß‚·
-//¶
-pushMatrix();    //Œ»İ‚ÌÀ•W‚ğ•Û‘¶ 
+popMatrix();    //å…ƒã®åº§æ¨™ã«æˆ»ã™
+//å·¦
+pushMatrix();    //ç¾åœ¨ã®åº§æ¨™ã‚’ä¿å­˜ 
 noStroke();
 fill(255);
 translate(-100, -5, 65);
@@ -392,9 +471,9 @@ translate(-100, -5, 65);
 rotateY(PI/6);
 rotateZ(-PI/10);
 box(60,2,2);
-popMatrix();    //Œ³‚ÌÀ•W‚É–ß‚·
-//è‘O
-pushMatrix();    //Œ»İ‚ÌÀ•W‚ğ•Û‘¶ 
+popMatrix();    //å…ƒã®åº§æ¨™ã«æˆ»ã™
+//æ‰‹å‰
+pushMatrix();    //ç¾åœ¨ã®åº§æ¨™ã‚’ä¿å­˜ 
 noStroke();
 fill(255);
 translate(-75, -10, 30);
@@ -402,191 +481,191 @@ rotateX(PI/10);
 //rotateY(PI/6);
 //rotateZ(PI/9);
 box(2,2,60);
-popMatrix();    //Œ³‚ÌÀ•W‚É–ß‚·
+popMatrix();    //å…ƒã®åº§æ¨™ã«æˆ»ã™
 
 
-//’†‰›‹…
-pushMatrix();    //Œ»İ‚ÌÀ•W‚ğ•Û‘¶
+//ä¸­å¤®çƒ
+pushMatrix();    //ç¾åœ¨ã®åº§æ¨™ã‚’ä¿å­˜
 translate(0,0,-15); 
 noStroke();
   fill(255, 255, 0);
 sphere(10);
-popMatrix();    //Œ³‚ÌÀ•W‚É–ß‚·
+popMatrix();    //å…ƒã®åº§æ¨™ã«æˆ»ã™
 
-pushMatrix();    //Œ»İ‚ÌÀ•W‚ğ•Û‘¶
+pushMatrix();    //ç¾åœ¨ã®åº§æ¨™ã‚’ä¿å­˜
 translate(50,0,-100); 
 noStroke();
   fill(255, 255, 0);
 sphere(10);
-popMatrix();    //Œ³‚ÌÀ•W‚É–ß‚·
+popMatrix();    //å…ƒã®åº§æ¨™ã«æˆ»ã™
 
-pushMatrix();    //Œ»İ‚ÌÀ•W‚ğ•Û‘¶
+pushMatrix();    //ç¾åœ¨ã®åº§æ¨™ã‚’ä¿å­˜
 translate(-50,0,-100); 
 noStroke();
   fill(255, 255, 0);
 sphere(10);
-popMatrix();    //Œ³‚ÌÀ•W‚É–ß‚·
+popMatrix();    //å…ƒã®åº§æ¨™ã«æˆ»ã™
 
-pushMatrix();    //Œ»İ‚ÌÀ•W‚ğ•Û‘¶
+pushMatrix();    //ç¾åœ¨ã®åº§æ¨™ã‚’ä¿å­˜
 translate(0,-60,-70); 
 noStroke();
   fill(255, 255, 0);
 sphere(10);
-popMatrix();    //Œ³‚ÌÀ•W‚É–ß‚·
+popMatrix();    //å…ƒã®åº§æ¨™ã«æˆ»ã™
 
-pushMatrix();    //Œ»İ‚ÌÀ•W‚ğ•Û‘¶
+pushMatrix();    //ç¾åœ¨ã®åº§æ¨™ã‚’ä¿å­˜
 translate(0,-15,-70); 
 noStroke();
   fill(0, 255,255);
 sphere(10);
-popMatrix();    //Œ³‚ÌÀ•W‚É–ß‚·
+popMatrix();    //å…ƒã®åº§æ¨™ã«æˆ»ã™
 
-//‰E‰œ‹…
-pushMatrix();    //Œ»İ‚ÌÀ•W‚ğ•Û‘¶
-translate(120,0,-15); 
+//å³å¥¥çƒ
+pushMatrix();    //ç¾åœ¨ã®åº§æ¨™ã‚’ä¿å­˜
+translate(140,0,-15); 
 noStroke();
   fill(255, 255, 0);
 sphere(10);
-popMatrix();    //Œ³‚ÌÀ•W‚É–ß‚·
+popMatrix();    //å…ƒã®åº§æ¨™ã«æˆ»ã™
 
-pushMatrix();    //Œ»İ‚ÌÀ•W‚ğ•Û‘¶
-translate(170,0,-100); 
+pushMatrix();    //ç¾åœ¨ã®åº§æ¨™ã‚’ä¿å­˜
+translate(190,0,-100); 
 noStroke();
   fill(255, 255, 0);
 sphere(10);
-popMatrix();    //Œ³‚ÌÀ•W‚É–ß‚·
+popMatrix();    //å…ƒã®åº§æ¨™ã«æˆ»ã™
 
-pushMatrix();    //Œ»İ‚ÌÀ•W‚ğ•Û‘¶
-translate(70,0,-100); 
+pushMatrix();    //ç¾åœ¨ã®åº§æ¨™ã‚’ä¿å­˜
+translate(90,0,-100); 
 noStroke();
   fill(255, 255, 0);
 sphere(10);
-popMatrix();    //Œ³‚ÌÀ•W‚É–ß‚·
+popMatrix();    //å…ƒã®åº§æ¨™ã«æˆ»ã™
 
-pushMatrix();    //Œ»İ‚ÌÀ•W‚ğ•Û‘¶
-translate(120,-60,-70); 
+pushMatrix();    //ç¾åœ¨ã®åº§æ¨™ã‚’ä¿å­˜
+translate(140,-60,-70); 
 noStroke();
   fill(255, 255, 0);
 sphere(10);
-popMatrix();    //Œ³‚ÌÀ•W‚É–ß‚·
+popMatrix();    //å…ƒã®åº§æ¨™ã«æˆ»ã™
 
-pushMatrix();    //Œ»İ‚ÌÀ•W‚ğ•Û‘¶
-translate(120,-15,-70); 
+pushMatrix();    //ç¾åœ¨ã®åº§æ¨™ã‚’ä¿å­˜
+translate(140,-15,-70); 
 noStroke();
   fill(0, 255,255);
 sphere(10);
-popMatrix();    //Œ³‚ÌÀ•W‚É–ß‚·
+popMatrix();    //å…ƒã®åº§æ¨™ã«æˆ»ã™
 
-//¶‰œ‹…
-pushMatrix();    //Œ»İ‚ÌÀ•W‚ğ•Û‘¶
-translate(-120,0,-15); 
+//å·¦å¥¥çƒ
+pushMatrix();    //ç¾åœ¨ã®åº§æ¨™ã‚’ä¿å­˜
+translate(-140,0,-15); 
 noStroke();
   fill(255, 255, 0);
 sphere(10);
-popMatrix();    //Œ³‚ÌÀ•W‚É–ß‚·
+popMatrix();    //å…ƒã®åº§æ¨™ã«æˆ»ã™
 
-pushMatrix();    //Œ»İ‚ÌÀ•W‚ğ•Û‘¶
-translate(-70,0,-100); 
+pushMatrix();    //ç¾åœ¨ã®åº§æ¨™ã‚’ä¿å­˜
+translate(-90,0,-100); 
 noStroke();
   fill(255, 255, 0);
 sphere(10);
-popMatrix();    //Œ³‚ÌÀ•W‚É–ß‚·
+popMatrix();    //å…ƒã®åº§æ¨™ã«æˆ»ã™
 
-pushMatrix();    //Œ»İ‚ÌÀ•W‚ğ•Û‘¶
-translate(-170,0,-100); 
+pushMatrix();    //ç¾åœ¨ã®åº§æ¨™ã‚’ä¿å­˜
+translate(-190,0,-100); 
 noStroke();
   fill(255, 255, 0);
 sphere(10);
-popMatrix();    //Œ³‚ÌÀ•W‚É–ß‚·
+popMatrix();    //å…ƒã®åº§æ¨™ã«æˆ»ã™
 
-pushMatrix();    //Œ»İ‚ÌÀ•W‚ğ•Û‘¶
-translate(-120,-60,-70); 
+pushMatrix();    //ç¾åœ¨ã®åº§æ¨™ã‚’ä¿å­˜
+translate(-140,-60,-70); 
 noStroke();
   fill(255, 255, 0);
 sphere(10);
-popMatrix();    //Œ³‚ÌÀ•W‚É–ß‚·
+popMatrix();    //å…ƒã®åº§æ¨™ã«æˆ»ã™
 
-pushMatrix();    //Œ»İ‚ÌÀ•W‚ğ•Û‘¶
-translate(-120,-15,-70); 
+pushMatrix();    //ç¾åœ¨ã®åº§æ¨™ã‚’ä¿å­˜
+translate(-140,-15,-70); 
 noStroke();
   fill(0, 255,255);
 sphere(10);
-popMatrix();    //Œ³‚ÌÀ•W‚É–ß‚·
+popMatrix();    //å…ƒã®åº§æ¨™ã«æˆ»ã™
 
-//‘O‰E‹…
-pushMatrix();    //Œ»İ‚ÌÀ•W‚ğ•Û‘¶
+//å‰å³çƒ
+pushMatrix();    //ç¾åœ¨ã®åº§æ¨™ã‚’ä¿å­˜
 translate(75,0,-5); 
 noStroke();
   fill(255, 255, 0);
 sphere(10);
-popMatrix();    //Œ³‚ÌÀ•W‚É–ß‚·
+popMatrix();    //å…ƒã®åº§æ¨™ã«æˆ»ã™
 
-pushMatrix();    //Œ»İ‚ÌÀ•W‚ğ•Û‘¶
+pushMatrix();    //ç¾åœ¨ã®åº§æ¨™ã‚’ä¿å­˜
 translate(125,0,80); 
 noStroke();
   fill(255, 255, 0);
 sphere(10);
-popMatrix();    //Œ³‚ÌÀ•W‚É–ß‚·
+popMatrix();    //å…ƒã®åº§æ¨™ã«æˆ»ã™
 
-pushMatrix();    //Œ»İ‚ÌÀ•W‚ğ•Û‘¶
+pushMatrix();    //ç¾åœ¨ã®åº§æ¨™ã‚’ä¿å­˜
 translate(25,0,80); 
 noStroke();
   fill(255, 255, 0);
 sphere(10);
-popMatrix();    //Œ³‚ÌÀ•W‚É–ß‚·
+popMatrix();    //å…ƒã®åº§æ¨™ã«æˆ»ã™
 
-pushMatrix();    //Œ»İ‚ÌÀ•W‚ğ•Û‘¶
+pushMatrix();    //ç¾åœ¨ã®åº§æ¨™ã‚’ä¿å­˜
 translate(75,-60,50); 
 noStroke();
   fill(255, 255, 0);
 sphere(10);
-popMatrix();    //Œ³‚ÌÀ•W‚É–ß‚·
+popMatrix();    //å…ƒã®åº§æ¨™ã«æˆ»ã™
 
-pushMatrix();    //Œ»İ‚ÌÀ•W‚ğ•Û‘¶
+pushMatrix();    //ç¾åœ¨ã®åº§æ¨™ã‚’ä¿å­˜
 translate(75,-15,50); 
 noStroke();
   fill(0, 255,255);
 sphere(10);
-popMatrix();    //Œ³‚ÌÀ•W‚É–ß‚·
+popMatrix();    //å…ƒã®åº§æ¨™ã«æˆ»ã™
 
-//‘O¶‹…
-pushMatrix();    //Œ»İ‚ÌÀ•W‚ğ•Û‘¶
+//å‰å·¦çƒ
+pushMatrix();    //ç¾åœ¨ã®åº§æ¨™ã‚’ä¿å­˜
 translate(-75,0,-5); 
 noStroke();
   fill(255, 255, 0);
 sphere(10);
-popMatrix();    //Œ³‚ÌÀ•W‚É–ß‚·
+popMatrix();    //å…ƒã®åº§æ¨™ã«æˆ»ã™
 
-pushMatrix();    //Œ»İ‚ÌÀ•W‚ğ•Û‘¶
+pushMatrix();    //ç¾åœ¨ã®åº§æ¨™ã‚’ä¿å­˜
 translate(-125,0,80); 
 noStroke();
   fill(255, 255, 0);
 sphere(10);
-popMatrix();    //Œ³‚ÌÀ•W‚É–ß‚·
+popMatrix();    //å…ƒã®åº§æ¨™ã«æˆ»ã™
 
-pushMatrix();    //Œ»İ‚ÌÀ•W‚ğ•Û‘¶
+pushMatrix();    //ç¾åœ¨ã®åº§æ¨™ã‚’ä¿å­˜
 translate(-25,0,80); 
 noStroke();
   fill(255, 255, 0);
 sphere(10);
-popMatrix();    //Œ³‚ÌÀ•W‚É–ß‚·
+popMatrix();    //å…ƒã®åº§æ¨™ã«æˆ»ã™
 
-pushMatrix();    //Œ»İ‚ÌÀ•W‚ğ•Û‘¶
+pushMatrix();    //ç¾åœ¨ã®åº§æ¨™ã‚’ä¿å­˜
 translate(-75,-60,50); 
 noStroke();
   fill(255, 255, 0);
 sphere(10);
-popMatrix();    //Œ³‚ÌÀ•W‚É–ß‚·
+popMatrix();    //å…ƒã®åº§æ¨™ã«æˆ»ã™
 
-pushMatrix();    //Œ»İ‚ÌÀ•W‚ğ•Û‘¶
+pushMatrix();    //ç¾åœ¨ã®åº§æ¨™ã‚’ä¿å­˜
 translate(-75,-15,50); 
 noStroke();
   fill(0, 255,255);
 sphere(10);
-popMatrix();    //Œ³‚ÌÀ•W‚É–ß‚·
+popMatrix();    //å…ƒã®åº§æ¨™ã«æˆ»ã™
 
 }	    
-// ƒ}ƒEƒXƒhƒ‰ƒbƒO‚Ìˆ—
+// ãƒã‚¦ã‚¹ãƒ‰ãƒ©ãƒƒã‚°æ™‚ã®å‡¦ç†
 void mouseDragged(){
   rotX += (mouseX - pmouseX) * 0.01;
   rotY -= (mouseY - pmouseY) * 0.01;
@@ -595,21 +674,33 @@ void mouseDragged(){
 </script>
     </head>
     <body bgcolor="#20b2aa" ontouchmove="event.preventDefault()">
- 
 
-<div id="canvasContainer" style="position:absolute;left:0px;top:100px;">
+<div class="section" >
+
+<center>SoroSilicate</center>
+</div>  
+
+<div id="canvasContainer"  >
 	<canvas   id="canvas"></canvas>
-	<p>ƒuƒ‰ƒEƒU‚ÍInternetExplorer11ˆÈ~AFireFoxAGoogle ChromeASafari‚ğ‚¨g‚¢‚­‚¾‚³‚¢B
+
 <p>Implement by <a href="http://processingjs.org/" target="_blank">Processing.js</a>
 </div>
 
-<div class="section" style="position:absolute;left:0px;top:1px;">
-‘¢Šâz•¨‚Ì‹¤—LŒ‹‡
-<center>l–Ê‘Ì’P‘Ì</center>
-</div> 
+<div class="link" >
+<p>
+<a href="Mtetra.html" target="_blank">SoroSilicate</a>
 
-<div class="close" style="position:absolute;left:70%;top:79%;">
-<a href="javascript:;" onclick="window.close();">•Â‚¶‚é</a> 
+<p><a href="Msingle.html"  target="_blank">InoSilicate single chain</a>  
+
+<p><a href="Mdouble.html"  target="_blank">InoSilicate double chain</a>  
+
+<p><a href="Msheet.html" target="_blank">PhylloSilicate</a>
+
+<p><a href="Mframework.html" target="_blank">Framework Silicate</a>
+</div>
+
+<div class="close">
+<a href="javascript:;" onclick="window.close();">Close</a> 
 </div>
   
 </body>

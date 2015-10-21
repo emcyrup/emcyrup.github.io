@@ -26,7 +26,8 @@ html,body {
 
 　　margin: auto;
 display:table;
-
+    -ms-touch-action: none; /* IE10で、スクロールをとめて、タッチ可能にする。*/
+overflow: auto;
 
 
 }
@@ -55,7 +56,6 @@ font-size: 130%;
 
 #canvas{
 
-    
             border: 10px solid #84c1ff;
             cursor:move;
 font-size: 10pt;
@@ -64,12 +64,46 @@ margin: 0 ;
         }
 div.link {
 
-padding:20px; /* ボックスの下パディング */
+padding:2px; /* ボックスの下パディング */
 margin: 0;
 background: #e6e6fa no-repeat bottom; /* ボックスの背景 */
 font-size: 140%;
  text-align : center;
+height: 160px;
+    width: 100%-12px;
+    overflow: scroll;
+   
+    -webkit-overflow-scrolling: touch;
+
+
+
 }
+.link::-webkit-scrollbar{ /* スクロールバー本体 */
+	width: 12px;
+	
+}
+
+.link::-webkit-scrollbar-thumb{ /* スクロールバーの動く部分 */
+	background: #165e83;
+	border-radius: 12px;
+}
+
+.link::-webkit-scrollbar-track-piece:start{ /* スクロールバーの動く部分の前 */
+	background: #f0f8ff;
+ border-radius: 12px;
+}
+.link::-webkit-scrollbar-track-piece:end{ /* スクロールバーの動く部分の後ろ */
+	background: #f0f8ff;
+ border-radius: 12px;
+}
+.link::-webkit-scrollbar-corner{ /* スクロールバー角 */
+	background: transparent;
+}
+.link::-webkit-scrollbar-thumb:hover {
+  -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.5);
+  background: #6495ed;
+
+
 </style>
 <!--[if lt IE 9]><script src="data/js/excanvas.js"></script><![endif]-->
 <script type="text/javascript" src="data/js/processing.js"></script>
@@ -88,299 +122,149 @@ font-size: 140%;
            new Processing(canvas, code);
          };
        </script>
-       <script id="processing-code" type="application/processing">
-import processing.opengl.*;
+       <script id="processing-code" type="text/processing" data-processing-target="canvas">
+
+
 
 float rotX, rotY;
+int NUM; 
+int cc1;
 
 void setup(){
   size(840, 480, OPENGL);    //OPENGLと書くことによって、3D空間であることを明示する
+hint(ENABLE_OPENGL_4X_SMOOTH); //DISABLE_OPENGL_2X_SMOOTHでも可
+
+NUM = 1;
+cc1 = 0;
+
+
 }
- 
+
 void draw(){
-  background(#1c1c1c);
-lights();
+background(#1c1c1c);  
 smooth(); 
-
 // イメージ内をクリックして 
-
-     translate(width/2, height/2);    //立体の中心を画面中央に移動   
-
-rotateX(rotY);
+    translate(width/2, height/2);    //立体の中心を画面中央に移動   
+	rotateX(rotY);
 	rotateY(rotX);
  rotateY(frameCount*0.005);
 
 
-rotateX(rotY);
-rotateY(rotX);
 
-scale(0.8);
-normal(rotX, rotY, 2);
-
-
-//中央/////////////////////////////////////////////////////////////////
-//四面体
+cc1 += NUM;
+if(cc1 > 255) {
+        NUM = -NUM;  //grayを白にする
+	cc1 = 255;
+}else if(cc1 < 0) {
+    NUM = -NUM;  //speedの増える値を反転する
+    cc1 = 0;  //grayを黒にする
+}
+scale(0.75);
 pushMatrix();    //現在の座標を保存
-translate(-125,0,0); 
-noFill();
-stroke(155,155,155);
+ 
+  noFill();
+stroke(255);
+
 beginShape(TRIANGLES); //四面体
   //正面
-  vertex(-125,  -125,  -125);
-  vertex( -125,  0,  0);
-  vertex( 0, 0,  -125);
+  vertex(-200,  115,  -115);
+  vertex( 200,  115,  -115);
+  vertex( 0, 115,  231);
 
-  vertex(-125,  -125,  -125);
-  vertex(-125,  0,  0);
-  vertex( 0, -125,  0);
+  vertex(-200,  115,  -115);
+  vertex(200,  115,  -115);
+  vertex( 0, -231,  0);
   
-  vertex(-125,  -125,  -125);
-  vertex(0,  0,  -125);
-  vertex( 0, -125,  0);
+  vertex(-200,  115,  -115);
+  vertex(0,  -231,  0);
+  vertex( 0, 115,  231);
 
-  vertex(0,  0,  -125);
-  vertex(0,  -125,  0);
-  vertex( -125, 0,  0);
 endShape();    //四角形を閉じる
 popMatrix();    //元の座標に戻す
 
 
-fill(255,255,0);
-//面１
-pushMatrix();    //現在の座標を保存
+//結ぶ線 上1/////////////////////////////////////////////////////
+pushMatrix();    //現在の座標を保存 
 noStroke();
-translate(-250, 125, 125);
-sphere(25);
+fill(255);
+translate(0, -100, 0);
+//rotateX(radians(45));
+//rotateY(radians(325));
+//rotateZ(radians(45));
+box(5,200,5);
 popMatrix();    //元の座標に戻す
-
-pushMatrix();    //現在の座標を保存
+//右
+pushMatrix();    //現在の座標を保存 
 noStroke();
-translate(0, -125, 125);
-sphere(25);
+fill(255);
+translate(100,50,-55	)
+//rotateX(PI/6);
+rotateY(PI/6);
+rotateZ(PI/6);
+box(200,5,5);
 popMatrix();    //元の座標に戻す
-
-
-pushMatrix();    //現在の座標を保存
+//左
+pushMatrix();    //現在の座標を保存 
 noStroke();
-translate(-125, 0, 125);
-sphere(25);
+fill(255);
+translate(-100, 50, -55);
+//rotateX();
+rotateY(-PI/6);
+rotateZ(-PI/6);
+box(250,5,5);
 popMatrix();    //元の座標に戻す
-
-//面２
-pushMatrix();    //現在の座標を保存
+//前
+pushMatrix();    //現在の座標を保存 
 noStroke();
-translate(0, 125, -125);
-sphere(25);
-popMatrix();    //元の座標に戻す
-
-
-pushMatrix();    //現在の座標を保存
-noStroke();
-translate(-250, -125, -125);
-sphere(25);
-popMatrix();    //元の座標に戻す
-
-pushMatrix();    //現在の座標を保存
-noStroke();
-translate(-125, 0, -125);
-sphere(25);
-popMatrix();    //元の座標に戻す
-
-//面３
-pushMatrix();    //現在の座標を保存
-noStroke();
-translate(-125, -125, 0);
-sphere(25);
-popMatrix();    //元の座標に戻す
-
-//面４
-pushMatrix();    //現在の座標を保存
-noStroke();
-translate(0, 0, 0);
-sphere(25);
-popMatrix();    //元の座標に戻す
-
-//面５
-pushMatrix();    //現在の座標を保存
-noStroke();
-translate(-125, 125, 0);
-sphere(25);
-popMatrix();    //元の座標に戻す
-
-//面6
-pushMatrix();    //現在の座標を保存
-noStroke();
-translate(-250, 0, 0);
-sphere(25);
-popMatrix();    //元の座標に戻す
-
-//内側
-fill(0,255,255);
-pushMatrix();    //現在の座標を保存
-noStroke();
-translate(-188, 62, 62);
-sphere(25);
-popMatrix();    //元の座標に戻す
-
-pushMatrix();    //現在の座標を保存
-noStroke();
-translate(-62, -62, 62);
-sphere(25);
-popMatrix();    //元の座標に戻す
-
-pushMatrix();    //現在の座標を保存
-noStroke();
-translate(-188, -62, -62);
-sphere(25);
-popMatrix();    //元の座標に戻す
-
-pushMatrix();    //現在の座標を保存
-noStroke();
-translate(-62, 62, -62);
-sphere(25);
-popMatrix();    //元の座標に戻す
-
-//線
-pushMatrix(); 
-stroke(255);
-translate(-125, 0, 0);
-line(125, 0,0,62,62,-62);
-line(62, 62,-62,0,125,0);
-line(0, 125,0,-62,62,62);
-line(-62, 62,62,-125,0,0);
-line(-125, 0,0,-62,-62,-62);
-line(-62, -62,-62,-125,-125,-125);
-line(-62, -62,-62,0,-125,0);
-line(-125, 125,125,-62,62,62);
-line(-62, -62,-62,-125,-125,-125);
-line(0, 0,-125,-62,-62,-62);
-line(0, 0,125,-62,62,62);
-line(0, 0,125,62,-62,62);
-line(62,-62,62,125,-125,125);
-line(62,-62,62,125,0,0);
-line(62,-62,62,0,-125,0);
-line(0,0,-125,62,62,-62);
-line(62,62,-62,125,125,-125);
-
-popMatrix();
-
-
-//右上/////////////////////////////////////////////////////////////////
-fill(255,255,0);
-//面１
-pushMatrix();    //現在の座標を保存
-noStroke();
-translate(0, 125, 125);
-sphere(25);
-popMatrix();    //元の座標に戻す
-
-pushMatrix();    //現在の座標を保存
-noStroke();
-translate(250, -125, 125);
-sphere(25);
+fill(255);
+translate(0, 50, 100);
+rotateX(-PI/6);
+//rotateY(-PI/6);
+//rotateZ(-PI/6);
+box(5,5,250);
 popMatrix();    //元の座標に戻す
 
 
+//中央球
 pushMatrix();    //現在の座標を保存
+translate(0,-231,0); 
 noStroke();
-translate(125, 0, 125);
-sphere(25);
-popMatrix();    //元の座標に戻す
-
-//面２
-pushMatrix();    //現在の座標を保存
-noStroke();
-translate(250, 125, -125);
-sphere(25);
-popMatrix();    //元の座標に戻す
-
-
-pushMatrix();    //現在の座標を保存
-noStroke();
-translate(0, -125, -125);
-sphere(25);
+  fill(255, 255, 0);
+sphere(40);
 popMatrix();    //元の座標に戻す
 
 pushMatrix();    //現在の座標を保存
+translate(200,115,-115); 
 noStroke();
-translate(125, 0, -125);
-sphere(25);
-popMatrix();    //元の座標に戻す
-
-//面３
-pushMatrix();    //現在の座標を保存
-noStroke();
-translate(125, -125, 0);
-sphere(25);
-popMatrix();    //元の座標に戻す
-
-//面４
-pushMatrix();    //現在の座標を保存
-noStroke();
-translate(250, 0, 0);
-sphere(25);
-popMatrix();    //元の座標に戻す
-
-//面５
-pushMatrix();    //現在の座標を保存
-noStroke();
-translate(125, 125, 0);
-sphere(25);
-popMatrix();    //元の座標に戻す
-
-//面6は重複分
-
-//内側
-fill(0,255,255);
-pushMatrix();    //現在の座標を保存
-noStroke();
-translate(62, 62, 62);
-sphere(25);
+  fill(255, 255, 0);
+sphere(40);
 popMatrix();    //元の座標に戻す
 
 pushMatrix();    //現在の座標を保存
+translate(-200,115,-115); 
 noStroke();
-translate(188, -62, 62);
-sphere(25);
+  fill(255, 255, 0);
+sphere(40);
 popMatrix();    //元の座標に戻す
 
 pushMatrix();    //現在の座標を保存
+translate(0,115,231); 
 noStroke();
-translate(62, -62, -62);
-sphere(25);
+  fill(255, 255, 0);
+sphere(40);
 popMatrix();    //元の座標に戻す
 
 pushMatrix();    //現在の座標を保存
+translate(0,0,0); 
 noStroke();
-translate(188, 62, -62);
-sphere(25);
+  fill(0, 255,255);
+sphere(40);
 popMatrix();    //元の座標に戻す
 
-//線
-pushMatrix(); 
-stroke(255);
-translate(125, 0, 0);
-line(125, 0,0,62,62,-62);
-line(62, 62,-62,0,125,0);
-line(0, 125,0,-62,62,62);
-line(-62, 62,62,-125,0,0);
-line(-125, 0,0,-62,-62,-62);
-line(-62, -62,-62,-125,-125,-125);
-line(-62, -62,-62,0,-125,0);
-line(-125, 125,125,-62,62,62);
-line(-62, -62,-62,-125,-125,-125);
-line(0, 0,-125,-62,-62,-62);
-line(0, 0,125,-62,62,62);
-line(0, 0,125,62,-62,62);
-line(62,-62,62,125,-125,125);
-line(62,-62,62,125,0,0);
-line(62,-62,62,0,-125,0);
-line(0,0,-125,62,62,-62);
-line(62,62,-62,125,125,-125);
 
-popMatrix();
+}
 
-}	    
+
 // マウスドラッグ時の処理
 void mouseDragged(){
   rotX += (mouseX - pmouseX) * 0.01;
@@ -393,7 +277,7 @@ void mouseDragged(){
 
 <div class="section" >
 
-<center>Silicate Framework</center>
+<center>Silicate structure</center>
 </div>  
 
 <div id="canvasContainer"  >
@@ -404,24 +288,19 @@ void mouseDragged(){
 
 <div class="link" >
 <p>
-<a href="./data/tetra.html" target="_blank">四面体単体</a>	
-<a href="./data/Mtetra.html" target="_blank">（分子）</a>
+<a href="./data/Mtetra.html" target="_blank">SoroSilicate</a>
 
-<p><a href="./data/single.html"  target="_blank">一重鎖構造</a>  
-<a href="./data/Msingle.html"  target="_blank">（分子）</a>  
+<p><a href="./data/Msingle.html"  target="_blank">InoSilicate single chain</a>  
 
-<p><a href="./data/double.html"  target="_blank">二重鎖構造</a>  
-<a href="./data/Mdouble.html"  target="_blank">（分子）</a>  
+<p><a href="./data/Mdouble.html"  target="_blank">InoSilicate double chain</a>  
 
-<p><a href="./data/sheet.html" target="_blank">層状構造</a>
-<a href="./data/Msheet.html" target="_blank">（分子）</a>
+<p><a href="./data/Msheet.html" target="_blank">PhylloSilicate</a>
 
-<p><a href="./data/framework.html" target="_blank">三次元網目構造</a>
-<a href="./data/Mframework.html" target="_blank">（分子）</a>
+<p><a href="./data/Mframework.html" target="_blank">Framework Silicate</a>
 </div>
 
 <div class="close">
-<a href="javascript:;" onclick="window.close();">閉じる</a> 
+<a href="javascript:;" onclick="window.close();">Close</a> 
 </div>
   
 </body>
