@@ -10,7 +10,7 @@
 <!--
 function openwin(url){
 
-	window.open(url,"","screen.availWidth,screen.availHeight,scrollbars=yes, resizable yesno ,directories = 0");
+	window.open(url,"","screen.availWidth,screen.availHeight,scrollbars=yes, resizable = yes ,directories = 0");
 
 }
 // -->
@@ -68,12 +68,8 @@ margin: 0;
 background: #e6e6fa no-repeat bottom; /* ボックスの背景 */
 font-size: 25pt;
  text-align : center;
-height: 300px;
     width: 100%-10;
-    overflow-y: scroll;
    
-    -webkit-overflow-scrolling: touch;
-
 
 </style>
 <!--[if lt IE 9]><script src="data/js/excanvas.js"></script><![endif]-->
@@ -102,7 +98,7 @@ int NUM;
 int cc1;
 
 void setup(){
-  size(640, 460, OPENGL);    //OPENGLと書くことによって、3D空間であることを明示する
+  size(640, 440, OPENGL);    //OPENGLと書くことによって、3D空間であることを明示する
 hint(ENABLE_OPENGL_4X_SMOOTH); //DISABLE_OPENGL_2X_SMOOTHでも可
 
 NUM = 1;
