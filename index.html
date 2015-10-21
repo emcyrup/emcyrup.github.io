@@ -66,7 +66,7 @@ div.link {
 padding:2px; /* ボックスの下パディング */
 margin: 0;
 background: #e6e6fa no-repeat bottom; /* ボックスの背景 */
-font-size: 30pt;
+font-size: 35pt;
  text-align : center;
     width: 100%-10;
    
@@ -98,7 +98,7 @@ int NUM;
 int cc1;
 
 void setup(){
-  size(980, 440, OPENGL);    //OPENGLと書くことによって、3D空間であることを明示する
+  size(980, 640, OPENGL);    //OPENGLと書くことによって、3D空間であることを明示する
 hint(ENABLE_OPENGL_4X_SMOOTH); //DISABLE_OPENGL_2X_SMOOTHでも可
 
 NUM = 1;
@@ -126,7 +126,7 @@ if(cc1 > 255) {
     NUM = -NUM;  //speedの増える値を反転する
     cc1 = 0;  //grayを黒にする
 }
-scale(0.75);
+scale(0.9);
 pushMatrix();    //現在の座標を保存
  
   noFill();
