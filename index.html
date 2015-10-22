@@ -24,9 +24,9 @@ a:hover { color: #ff0000; text-decoration: underline; }
 a:active { color: #ff8000; }
 
 html,body {
-
-　　margin: auto;
+margin: auto;
 overflow-y: auto;
+-ms-touch-action: none; /* IE10で、スクロールをとめて、タッチ可能にする。*/
 }
 
 body{
@@ -63,11 +63,7 @@ background: #e6e6fa no-repeat bottom; /* ボックスの背景 */
 font-size: 30pt;
 text-align : center;
 
-height: 200px;
-    width: 100%-20;
-    overflow-y: scroll;
-    border: 1px solid #CCC;
-    -webkit-overflow-scrolling: touch;
+
 }
 
 .link::-webkit-scrollbar{ /* スクロールバー本体 */
