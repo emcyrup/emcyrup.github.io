@@ -1,6 +1,7 @@
 ﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
 <html> <head>
 <meta charset="utf-8"  /><!--"euc-jp,Shift_JIS"-->
+<script src="data/js/css_browser_ua.js" type="text/javascript"></script>
 
 <link rel="stylesheet" type="text/css">
 <title>silicate</title>
@@ -25,18 +26,18 @@ a:active { color: #ff8000; }
 html,body {
 
 　　margin: auto;
-display:table;
-    -ms-touch-action: none; /* IE10で、スクロールをとめて、タッチ可能にする。*/
-
-
+overflow-y: auto;
 }
-body{
 
+body{
 text-align : center;
 margin: 0 ;
-    display:table-cell;
-    
 }
+.mac body{
+    -ms-touch-action: none; /* IE10で、スクロールをとめて、タッチ可能にする。*/
+}
+ 
+  
 /* --- ボックス --- */
 div.section {
 padding:5px; /* ボックスの下パディング */
@@ -47,24 +48,49 @@ color: #000000;
 }
 
 
-
 #canvas{
-
             border: 10px solid #84c1ff;
             cursor:move;
 font-size: 10pt;
-    
+width: 970px;    
 margin: 0 ;
-        }
-div.link {
+ text-align : center;
+}
 
+
+div.link {
 padding:2px; /* ボックスの下パディング */
 margin: 0;
 background: #e6e6fa no-repeat bottom; /* ボックスの背景 */
-font-size: 35pt;
- text-align : center;
-    width: 100%;
+font-size: 30pt;
+text-align : center;
 }
+.win link{
+height: 200px;
+    width: 100%-20;
+    overflow-y: scroll;
+    border: 1px solid #CCC;
+    -webkit-overflow-scrolling: touch;
+}
+
+.link::-webkit-scrollbar{ /* スクロールバー本体 */
+	width: 20px;
+	background: #9aadfc;
+
+}
+.link::-webkit-scrollbar-thumb{ /* スクロールバーの動く部分 */
+	background: #435295;
+	border-radius: 20px;
+}
+
+.link::-webkit-scrollbar-track-piece
+	background: #9aadfc;
+}
+}
+.link::-webkit-scrollbar-corner{ /* スクロールバー角 */
+	background: transparent;
+}
+
 /*div.close {
 padding:4px; /* ボックスの下パディング */
 text-align : center;
@@ -76,7 +102,6 @@ font-size: 25pt;
 <!--[if lt IE 9]><script src="data/js/excanvas.js"></script><![endif]-->
 <script type="text/javascript" src="data/js/processing.js"></script>
 <script type="text/javascript" src="data/js/init.js"></script>
-
 <script>
          window.onload = function(){
            // canvas要素
@@ -99,7 +124,7 @@ int NUM;
 int cc1;
 
 void setup(){
-  size(970, 640, OPENGL);    //OPENGLと書くことによって、3D空間であることを明示する
+  size(970, 500, OPENGL);    //OPENGLと書くことによって、3D空間であることを明示する
 hint(ENABLE_OPENGL_4X_SMOOTH); //DISABLE_OPENGL_2X_SMOOTHでも可
 
 NUM = 1;
@@ -127,7 +152,7 @@ if(cc1 > 255) {
     NUM = -NUM;  //speedの増える値を反転する
     cc1 = 0;  //grayを黒にする
 }
-scale(0.9);
+scale(0.8);
 pushMatrix();    //現在の座標を保存
  
   noFill();
@@ -248,11 +273,12 @@ void mouseDragged(){
 <center>Silicate structure</center>
 </div>  
 
-<div id="canvasContainer"  >
-	<canvas   id="canvas"></canvas>
 
+<div class="canvasContainer"  >
+	<canvas   id="canvas"></canvas>
 <p>Implement by <a href="http://processingjs.org/" target="_blank">Processing.js</a>
 </div>
+
 
 <div class="link" >
 <p>
@@ -268,6 +294,5 @@ void mouseDragged(){
 </div>
 
 
-  
-</body>
+</body>  
 </html>
