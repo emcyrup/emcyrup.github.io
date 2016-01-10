@@ -1,0 +1,277 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html> <head>
+<meta charset="utf-8"  /><!--"euc-jp,Shift_JIS"-->
+
+
+<link rel="stylesheet" type="text/css">
+<title>公転軌道</title>
+
+<script type="text/javascript">
+
+<!--
+function openwin(url){
+
+	window.open(url,"","screen.availWidth,screen.availHeight,scrollbars=yes, resizable = yes ,directories = 0");
+
+}
+// -->
+</script>
+
+
+
+<style type="text/css">
+a:link { color: #0000ff; }
+a:visited { color: #000080; }
+a:hover { color: #ff0000; text-decoration: underline; }
+a:active { color: #ff8000; }
+
+html,body {
+font-family:"ヒラギノ角ゴ Pro W3",メイリオ,Osaka,Arial,Verdana
+,"ＭＳ Ｐゴシック",sans-serif;
+-ms-touch-action: none; /* IE10で、スクロールをとめて、タッチ可能にする。*/
+}
+
+
+ 
+  
+/* --- ボックス --- */
+
+
+#sample{
+            border: 10px solid #84c1ff;
+            cursor:move;
+font-size: 10pt;
+width: 300px;    
+}
+
+
+
+
+
+
+
+</style>
+<!--[if lt IE 9]><script src="data/js/excanvas.js"></script><![endif]-->
+<script type="text/javascript" src="data/js/processing.js"></script>
+<script type="text/javascript" src="data/js/init.js"></script>
+<script>
+         window.onload = function(){
+           // canvas要素
+           var canvas = document.getElementsByTagName('sample')[0];
+
+           // Proccessingのコードが書かれたscript要素
+           var codeElm = document.getElementById('processing-code');
+           // 上記要素の内容を取得
+           var code = codeElm.textContent || codeElm.innerText;
+
+
+           new Processing(sample, code);
+         };
+       </script>
+       <script id="processing-code" type="text/processing" data-processing-target="canvas">
+
+float rotX, rotY;
+
+void setup(){
+  size(300, 600, OPENGL);    //OPENGLと書くことによって、3D空間であることを明示する
+hint(ENABLE_OPENGL_4X_SMOOTH); //DISABLE_OPENGL_2X_SMOOTHでも可
+
+ thare = 0;
+  rhare =1150;
+
+  t = 0.12;
+
+}
+
+void draw(){
+background(#1c1c1c);  
+smooth(); 
+
+translate(width/4,0);    //立体の中心を画面中央に移動   
+translate(0, rotY);    //立体の中心を画面中央に移動   
+
+
+    if(pmouseY + rotY < 0){
+    rotY = -200;
+}
+    if(pmouseY + rotY > 400){
+    rotY = 0;
+}
+
+
+
+
+//太陽
+fill(255,255,0);
+noStroke();
+  ellipse(0,30,30,30);
+
+
+//水星
+
+  noStroke();
+fill(155,155,155);
+  ellipse(0,90,22,22);
+
+
+
+//金星
+
+  noStroke();
+fill(250,210,50);
+  ellipse(0,140,25,25);
+
+
+//地球
+
+  noStroke();
+fill(10,250,200);
+  ellipse(0,190,25,25);
+
+
+//火星
+
+  noStroke();
+fill(255,50,0);
+  ellipse(0,240,20,20);
+
+//小惑星帯ケレス
+
+  noStroke();
+fill(30,30,140);
+  rect(0-7.5,287.5,15,15);
+fill(200,200,200);
+  rect(0-15,280,30,30);
+
+fill(30,30,140,180);
+  rect(-width/3,270,3*width/7,50);
+
+
+
+//木星
+
+  noStroke();
+fill(150,50,50);
+  ellipse(0,380,90,90);
+
+//土星
+
+  noStroke();
+fill(200,200,50);
+  ellipse(0,460,60,60);
+
+//天王星
+
+  noStroke();
+fill(120,200,150);
+  ellipse(0,520,40,40);
+
+//海王星
+
+  noStroke();
+fill(20,50,255);
+  ellipse(0,570,30,30);
+
+
+//彗星
+
+//彗星中点
+pushMatrix();
+translate(-50,660)
+
+sA = 20; 
+sB = -15;
+
+int harer = 70;
+int hareg = 150;
+int hareb = 255;
+int hareal = 255;
+hi = 0;
+fill(255);
+  ellipse(sA,sB,9,9);
+
+  noStroke();
+for (i=0;i<20;i=i+1){
+fill(harer,hareg,hareb,hareal);
+//尾の終点
+
+float sX = sA+(hi*(sA)/sqrt(sq(sB)+sq(sA)));
+float sY = sB+(hi*(sB)/sqrt(sq(sA)+sq(sB)));
+
+beginShape(); 
+vertex(sA,sB); 
+vertex(((sX-sA)*cos(PI/36)-(sY-sB)*sin(PI/36))+sA,((sX-sA)*sin(PI/36)+(sY-sB)*cos(PI/36))+sB);
+vertex(sX,sY); 
+vertex(((sX-sA)*cos(71*PI/36)-(sY-sB)*sin(71*PI/36))+sA,((sX-sA)*sin(71*PI/36)+(sY-sB)*cos(71*PI/36))+sB);
+endShape(); 
+
+hi = hi+5;
+harer = harer-4;
+hareg = hareg-6;
+hareb = hareb-10;
+hareal = hareal-5;
+}
+
+fill(70,150,255);
+  ellipse(sA,sB,16,16);
+popMatrix();
+
+
+//冥王星
+
+  noStroke();
+fill(#1c1c1c);
+  rect(0-10,700,20,20);
+fill(120,120,25);
+  rect(0-20,690,40,40);
+
+
+
+
+
+fill(255);
+textSize(28);
+text("太陽", 70, 20);
+text("水星", 70, 80);
+text("金星", 70, 135);
+text("地球", 70, 185);
+text("火星", 70, 235);
+text("小惑星帯", 70, 295);
+text("木星", 70, 385);
+text("土星", 70, 460);
+text("天王星", 70, 520);
+text("海王星", 70, 570);
+text("彗星", 70, 635);
+text("冥王星", 70, 715);
+
+
+
+}
+
+// マウスドラッグ時の処理
+void mouseDragged(){
+  rotX += (mouseX - pmouseX) * 1.5;
+  rotY += (mouseY - pmouseY) * 1.5;
+
+
+
+}
+
+
+</script>
+    </head>
+    <body bgcolor="#20b2aa" ontouchmove="event.preventDefault()">
+
+
+
+
+
+	<canvas   id="sample"></canvas>
+
+
+
+
+
+</body>  
+</html>
+

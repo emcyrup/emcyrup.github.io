@@ -34,82 +34,56 @@ overflow-y: auto;
 }
 
 body{
- width : 100%;
 text-align : center;
-margin: 0 auto;
+margin: 0 ;
 }
 
  
   
 /* --- ボックス --- */
-#section {
+div.section {
 padding:5px; /* ボックスの下パディング */
-margin: auto ;
+margin: 0 ;
 background: #fcffff no-repeat bottom; /* ボックスの背景 */
 font-size: 42pt;
 color: #000000;
 }
 
-.sousa {
+div.sousa {
 padding:5px; /* ボックスの下パディング */
-margin: auto ;
+margin: 0 ;
 background: #66cccc no-repeat bottom; /* ボックスの背景 */
 font-size: 25pt;
 color: #000000;
 }
 
-.main{
-
-  width : 1600px; 
-  margin :0 auto;
-
-}
-
-#sample{	
-            border: 10px solid #84c1ff;
-float : left;
-
-            cursor:n-resize;
-}
-
 #canvas{
-
             border: 10px solid #84c1ff;
-            cursor:e-resize;
-float : left;
+            cursor:move;
+font-size: 10pt;
+width: 970px;    
+margin: 0 ;
+ text-align : center;
 }
 
-div. rmenu{
-width: 200px;
-height: 620px;
 
-float : left;
+div.link {
+padding:2px; /* ボックスの下パディング */
+margin: 0;
+background: #e6e6fa no-repeat bottom; /* ボックスの背景 */
+font-size: 35pt;
+text-align : center;
+
+
 }
 
-div.bbox{
-            
-height: 200px;
-width: 200px;
-}
 
-div.setsumei{
-            
-font-size: 16pt; 
-text-align: left;
-padding: 4pt;
-line-height: 410%;
-background-color:#f8f8ff;
-height: 410px;
-width: 200px;
- float : left;
-}
-
-.footer{
-  width : 100%;
-  clear : both;
-  margin : auto;
-}
-
+/*div.close {
+padding:4px; /* ボックスの下パディング */
+text-align : center;
+background: #e6e6fa no-repeat bottom; /* ボックスの背景 */
+font-size: 25pt;
+}   */
 
 </style>
 <!--[if lt IE 9]><script src="data/js/excanvas.js"></script><![endif]-->
@@ -119,15 +93,12 @@ width: 200px;
          window.onload = function(){
            // canvas要素
            var canvas = document.getElementsByTagName('canvas')[0];
-           var sample = document.getElementsByTagName('sample')[0];
-
            // Proccessingのコードが書かれたscript要素
            var codeElm = document.getElementById('processing-code');
            // 上記要素の内容を取得
            var code = codeElm.textContent || codeElm.innerText;
 
 
-           new Processing(sample, code);
            new Processing(canvas, code);
          };
        </script>
@@ -167,7 +138,6 @@ boolean rect3Over = false;
 void setup(){
   size(970, 600, OPENGL);    //OPENGLと書くことによって、3D空間であることを明示する
 hint(ENABLE_OPENGL_4X_SMOOTH); //DISABLE_OPENGL_2X_SMOOTHでも可
- frameRate(20);
 
 NUM = 1;
 cc1 = 0;
@@ -214,6 +184,7 @@ rectColor = color(10,200,250);
   rect3X = width*0.93-rectSize/2;
   rect3Y = height*0.4+2*rectSize*1.2;
 
+
 }
 
 void draw(){
@@ -227,7 +198,7 @@ smooth();
 }
 
 
-//時間調節
+
  update(mouseX, mouseY);
  if (rectOver) {
     fill(rectHighlight);
@@ -241,25 +212,22 @@ rect(rectX, rectY, rectSize, rectSize);
   
   if (rect2Over) {
     fill(rect2Highlight);
-t=0.24
+t=1.416
   } else {
     fill(rect2Color);
-
 }
   stroke(0);
   rect(rect2X, rect2Y, rect2Size, rect2Size);
 
   if (rect3Over) {
     fill(rect3Highlight);
-t=1.2
+t=29.7
   } else {
     fill(rect3Color);
 
 }
   stroke(0);
   rect(rect3X, rect3Y, rect3Size, rect3Size);
-
-
 
 pushMatrix();
 translate(width/2, height/2);    //立体の中心を画面中央に移動   
@@ -424,7 +392,6 @@ fill(70,150,255);
   ellipse(sA,sB,10,10);
 popMatrix();
 
-
 //小惑星帯ケレス
 
   noFill();
@@ -432,7 +399,7 @@ stroke(250,250,0);
   ellipse(0,0,400,400);
 
   noStroke();
-fill(30,30,140);
+fill(30,30,140,180);
   rect(-rcere*cos(tcere)-4,rcere*sin(tcere)-4,8,8);
 fill(200,200,200);
   rect(-rcere*cos(tcere)-8,rcere*sin(tcere)-8,16,16);
@@ -440,11 +407,10 @@ fill(200,200,200);
 fill(#1c1c1c);
 ellipse(0,0,300,300);
 
-fill(30,30,140);
+fill(30,30,140,180);
 ellipse(0,0,600,600);
-fill(255);
-
 popMatrix();
+
 
 
 }
@@ -514,6 +480,8 @@ boolean overRect3(int x, int y, int width, int height)  {
 // マウスドラッグ時の処理
 void mouseDragged(){
   rotX += (mouseX - pmouseX) * 1;
+  rotY -= (mouseY - pmouseY) * 0.01;
+
     if(rotX>1 && rotX<970 ){
       rotX += (mouseX - pmouseX) * 1;
 }
@@ -528,201 +496,6 @@ void mouseDragged(){
 
 
 </script>
-
-       <script id="processing-code" type="text/processing" data-processing-target="sample">
-float rotX, rotY;
-
-int thare;
-int rhare;
-
-void setup(){
-  size(260, 600, OPENGL);    //OPENGLと書くことによって、3D空間であることを明示する
-hint(ENABLE_OPENGL_4X_SMOOTH); //DISABLE_OPENGL_2X_SMOOTHでも可
-
-thare = 0;
-rhare =1150;
-
-t = 0.12;
-}
-
-void draw(){
-background(#1c1c1c);  
-smooth(); 
-
-
-translate(width/5,0);    //立体の中心を画面中央に移動   
-translate(0, rotY);    //立体の中心を画面中央に移動   
-
-
-    if(pmouseY + rotY < 0){
-    rotY = -220;
-}
-    if(pmouseY + rotY > 400){
-    rotY = 0;
-}
-
-
-
-//太陽
-fill(255,255,0);
-noStroke();
-  ellipse(0,30,30,30);
-
-
-//水星
-
-  noStroke();
-fill(155,155,155);
-  ellipse(0,90,22,22);
-
-
-
-//金星
-
-  noStroke();
-fill(250,210,50);
-  ellipse(0,140,25,25);
-
-
-//地球
-
-  noStroke();
-fill(10,250,200);
-  ellipse(0,190,25,25);
-
-
-//火星
-
-  noStroke();
-fill(255,50,0);
-  ellipse(0,240,20,20);
-
-//小惑星帯
-
-  noStroke();
-
-fill(30,30,140);
-  rect(-width/3,270,3*width/7,50);
-
-//ケレス
-fill(#1c1c1c);
-  rect(0-7.5,347.5,15,15);
-fill(200,200,200);
-  rect(0-15,340,30,30);
-
-
-//木星
-
-  noStroke();
-fill(150,50,50);
-  ellipse(0,430,90,90);
-
-//土星
-
-  noStroke();
-fill(200,200,50);
-  ellipse(0,520,60,60);
-
-//天王星
-
-  noStroke();
-fill(120,200,150);
-  ellipse(0,590,40,40);
-
-//海王星
-
-  noStroke();
-fill(20,50,255);
-  ellipse(0,650,30,30);
-
-
-//彗星
-
-//彗星中点
-pushMatrix();
-translate(-50,750)
-
-sA = 20; 
-sB = -15;
-
-int harer = 70;
-int hareg = 150;
-int hareb = 255;
-int hareal = 255;
-hi = 0;
-fill(255);
-  ellipse(sA,sB,9,9);
-
-  noStroke();
-for (i=0;i<20;i=i+1){
-fill(harer,hareg,hareb,hareal);
-//尾の終点
-
-float sX = sA+(hi*(sA)/sqrt(sq(sB)+sq(sA)));
-float sY = sB+(hi*(sB)/sqrt(sq(sA)+sq(sB)));
-
-beginShape(); 
-vertex(sA,sB); 
-vertex(((sX-sA)*cos(PI/36)-(sY-sB)*sin(PI/36))+sA,((sX-sA)*sin(PI/36)+(sY-sB)*cos(PI/36))+sB);
-vertex(sX,sY); 
-vertex(((sX-sA)*cos(71*PI/36)-(sY-sB)*sin(71*PI/36))+sA,((sX-sA)*sin(71*PI/36)+(sY-sB)*cos(71*PI/36))+sB);
-endShape(); 
-
-hi = hi+5;
-harer = harer-4;
-hareg = hareg-6;
-hareb = hareb-10;
-hareal = hareal-5;
-}
-
-fill(70,150,255);
-  ellipse(sA,sB,16,16);
-popMatrix();
-
-
-//冥王星
-
-  noStroke();
-fill(#1c1c1c);
-  rect(0-10,775,20,20);
-fill(120,120,25);
-  rect(0-20,765,40,40);
-
-
-
-
-
-fill(255);
-textSize(28);
-text("太陽", 70, 20);
-text("水星", 70, 80);
-text("金星", 70, 135);
-text("地球", 70, 185);
-text("火星", 70, 235);
-text("小惑星帯", 70, 295);
-text("ケレス", 70, 360);
-text("木星", 70, 435);
-text("土星", 70, 525);
-text("天王星", 70, 590);
-text("海王星", 70, 650);
-text("ハレー彗星", 70, 720);
-text("冥王星", 70, 790);
-
-
-
-}
-
-// マウスドラッグ時の処理
-void mouseDragged(){
-  rotY += (mouseY - pmouseY) * 1.5;
-
-
-
-}
-
-
-</script>
-
     </head>
     <body bgcolor="#20b2aa" ontouchmove="event.preventDefault()">
 
@@ -738,24 +511,16 @@ void mouseDragged(){
 <center>画面を指で左右にスワイプして太陽系を拡大・縮小してみましょう</center>
 </div>  
 
- <div class="main">
+
+
 <div class="canvasContainer"  >
-<canvas id= "sample" ></canvas>
-<canvas   id="canvas"></canvas></div>
-
-<div class="rmenu">
-
-<div class ="bbox" ></div>
-<div class ="setsumei" >
-
-<p style="line-height: 10%;">地球の公転周期
-<p style="color:#4496d2;">低速　3.0秒で1周
-<p style="color:#00984f;">中速　1.5秒で1周
-<p style="color:#e5a323;">高速　0.3秒で1周</div></div>
-
+	<canvas   id="canvas"></canvas>
+<p>Implement by <a href="http://processingjs.org/" target="_blank">Processing.js</a>
 </div>
-<div class="footer">
-Implement by <a href="http://processingjs.org/" target="_blank">Processing.js</a></div>
+
+
+
+
 
 </body>  
 </html>
